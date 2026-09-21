@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "TabPulse Resource Shield",
+  "version": "1.0",
+  "description": "Smart, profile-driven tab sleeping with real-time memory telemetry HUD overlays.",
+  "permissions": [
+    "tabs",
+    "storage",
+    "alarms"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["hud.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}

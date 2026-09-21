@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body { font-family: system-ui, sans-serif; width: 280px; padding: 12px; margin: 0; background: #fafafa; }
+    h3 { margin: 0 0 10px 0; color: #111827; font-size: 16px; }
+    p { font-size: 12px; color: #6b7280; margin: 0 0 12px 0; }
+    select, textarea { width: 100%; padding: 8px; border-radius: 6px; border: 1px solid #d1d5db; background: white; font-size: 13px; outline: none; box-sizing: border-box; }
+    label { font-size: 12px; font-weight: bold; color: #374151; display: block; margin-top: 12px; margin-bottom: 4px; }
+    .status { margin-top: 12px; font-size: 11px; padding: 6px; background: #e0f2fe; color: #0369a1; border-radius: 4px; display: none; }
+  </style>
+</head>
+<body>
+  <h3>TabPulse Shield</h3>
+  <p>Select your background memory optimization speed profile:</p>
+  
+  <select id="profileSelect">
+    <option value="aggressive">Aggressive (Sleep after 5m idle)</option>
+    <option value="balanced">Balanced (Sleep after 30m idle)</option>
+    <option value="developer">Developer Heavy (Sleep after 2h idle)</option>
+  </select>
+
+  <label for="whitelistInput">Never Sleep Whitelist (One per line):</label>
+  <textarea id="whitelistInput" rows="3" placeholder="youtube.com&#10;spotify.com"></textarea>
+
+  <div id="statusNotify" class="status">Settings updated successfully!</div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
